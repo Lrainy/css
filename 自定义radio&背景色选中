@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css radio</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		ul{
+			list-style: none;
+		}
+		.option{
+			display: none;
+		}
+		.option+label{
+			position: relative;
+			width: 14px;
+			height:14px;
+			border-radius:50%;
+			border:1px solid #d22129;
+			background-color: transparent;
+			display: inline-block;
+			top:2px;
+			margin-right:8px;
+		}
+		.option:checked+label{
+			position:relative;
+			width: 14px;
+			height: 14px;
+			border-radius:50%;
+			border:1px solid #d22129;
+			background-color: #d22129;
+			display: inline-block;
+			top:2px;
+			margin-right: 8px; 
+		}
+		.option:checked+label::before,.option:checked+label::after{
+			position: absolute;
+			background-color: #fff;
+			content:'';
+			left:3px;
+			bottom: 3px;
+		}
+		.option:checked+label::before{
+			width: 2px;
+			height:6px;
+			-webkit-transform:rotate(-45deg);
+		}
+		.option:checked+label::after{
+			display: block;
+			position: relative;
+			top:6px;
+			left:4px;
+			-webkit-transform:rotate(-45deg);
+			width:10px;
+			height:2px;
+		}
+	</style>
+</head>
+<body>
+	<h1>css打造可变色radio&带背景色的☑️</h1>
+	<form>
+		<div class="question">猜猜你的借钱额度？</div>
+		<ul>
+			<li><input type="radio" name="answer" value="A" id="answerA" class="option"><label for="answerA"></label><span class="answerContent">A:1万以内</span></li>
+			<li><input type="radio" name="answer" value="B" id="answerB" class="option"><label for="answerB"></label><span class="answerContent">B:1万-5万</span></li>
+			<li><input type="radio" name="answer" value="C" id="answerC" class="option"><label for="answerC"></label><span class="answerContent">C:5万-15万</span></li>
+			<li><input type="radio" name="answer" value="D" id="answerD" class="option"><label for="answerD"></label><span class="answerContent">D:15万-30万</span></li>
+		</ul>
+	</form>
+</body>
+</html>
